@@ -10,12 +10,9 @@ class EchoServer
 {
 public:
 	EchoServer(boost::asio::io_context& ioc, std::string server_ip, uint16_t port) :
-		_acceptor(ioc), //boost::asio::ip::tcp::endpoint(boost::asio::ip::address::from_string(server_ip), port)),
+		_acceptor(ioc, boost::asio::ip::tcp::endpoint(boost::asio::ip::address::from_string(server_ip), port)),
 		the_ioc(ioc)
 	{
-		boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string(server_ip), port);
-		_acceptor.open(ep.protocol());
-		_acceptor.bind(ep);
 		StartAccepte();
 	}
 
@@ -37,6 +34,7 @@ private:
 	void AcceptorCallback(const boost::system::error_code& ec, std::shared_ptr<Secsion> new_secsion)
 	{
 		if (ec) {
+			std::cout << ec.what() << std::endl;
 			return;
 		}
 

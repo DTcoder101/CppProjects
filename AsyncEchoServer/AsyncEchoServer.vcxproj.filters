@@ -13,21 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Server">
+      <UniqueIdentifier>{d0122c44-39fc-4963-959d-67ec2d625bcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Server\Secsion">
+      <UniqueIdentifier>{6e51465d-2ef2-4577-bcaf-e32faa732fb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Server">
+      <UniqueIdentifier>{9b9764c2-66dd-41a2-a9e4-7cfac9a0b9e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Server\Secsion">
+      <UniqueIdentifier>{1f96105d-a41d-4ab8-8dad-3c79908d458b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Secsion.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Server\Secsion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EchoServer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Secsion.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Server\Secsion</Filter>
+    </ClInclude>
+    <ClInclude Include="EchoServer.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgNode.h">
+      <Filter>Header Files\Server\Secsion</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
