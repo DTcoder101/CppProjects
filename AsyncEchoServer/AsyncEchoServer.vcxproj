@@ -130,9 +130,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Secsion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EchoServer.h" />
+    <ClInclude Include="Secsion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
