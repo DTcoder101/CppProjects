@@ -127,7 +127,7 @@ void Secsion::ReadFromSock(size_t want_read_bytes)
 	size_t read_buf_len = read_node->GetTotalLen();
 	boost::asio::mutable_buffer read_buf(read_buf_addr, read_buf_len);
 
-	auto ReadToken = std::bind(Secsion::ReadCallback, this, std::placeholders::_1, std::placeholders::_2);
+	auto ReadToken = std::bind(&Secsion::ReadCallback, this, std::placeholders::_1, std::placeholders::_2);
 
 	sock->async_read_some(read_buf, ReadToken);
 	read_working = true;
@@ -148,7 +148,7 @@ void Secsion::ReadCallback(const boost::system::error_code& ec, size_t read_byte
 	size_t read_buf_len = read_node->GetTotalLen() - finished_len;
 	boost::asio::mutable_buffer read_buf(read_buf_addr, read_buf_len);
 
-	auto ReadToken = std::bind(Secsion::ReadCallback, this, std::placeholders::_1, std::placeholders::_2);
+	auto ReadToken = std::bind(&Secsion::ReadCallback, this, std::placeholders::_1, std::placeholders::_2);
 
 	sock->async_read_some(read_buf, ReadToken);
 }
